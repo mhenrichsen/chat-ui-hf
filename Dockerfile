@@ -1,32 +1,36 @@
-# syntax=docker/dockerfile:1
-# read the doc: https://huggingface.co/docs/hub/spaces-sdks-docker
-# you will also find guides on how best to write your Dockerfile
-FROM node:20 as builder-production
+# Use the official Node.js 18 image as a base image
+FROM node:18 AS build
 
-WORKDIR /app
+# Set the working directory inside the container
+WORKDIR /usr/src/app
 
-COPY --link --chown=1000 package-lock.json package.json ./
-RUN --mount=type=cache,target=/app/.npm \
-        npm set cache /app/.npm && \
-        npm ci --omit=dev
+# Copy the package.json and package-lock.json to utilize cached Docker layers
+COPY package*.json ./
 
-FROM builder-production as builder
+# Install npm dependencies (including devDependencies for building the project)
+RUN npm install
 
-RUN --mount=type=cache,target=/app/.npm \
-        npm set cache /app/.npm && \
-        npm ci
+# Copy the rest of the project files
+COPY . .
 
-COPY --link --chown=1000 . .
+# Build the SvelteKit app for production
+RUN npm run build
 
-RUN --mount=type=secret,id=DOTENV_LOCAL,dst=.env.local \
-    npm run build
+# Production stage
+FROM node:18 AS production
 
-FROM node:20-slim
+WORKDIR /usr/src/app
 
-RUN npm install -g pm2
+# Copy package.json and package-lock.json for installing production dependencies
+COPY --from=build /usr/src/app/package*.json ./
 
-COPY --from=builder-production /app/node_modules /app/node_modules
-COPY --link --chown=1000 package.json /app/package.json
-COPY --from=builder /app/build /app/build
+# Install only production dependencies
+RUN npm install --production
 
-CMD pm2 start /app/build/index.js -i $CPU_CORES --no-daemon
+# Copy the built app from the build container
+COPY --from=build /usr/src/app/build ./build
+
+EXPOSE 3000
+
+# Start the Node.js server
+CMD ["node", "build"]

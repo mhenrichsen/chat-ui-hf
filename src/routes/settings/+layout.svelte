@@ -65,7 +65,7 @@
 						<div
 							class="ml-auto rounded-lg bg-black px-2 py-1.5 text-xs font-semibold leading-none text-white"
 						>
-							Active
+							Aktiv
 						</div>
 					{/if}
 				</a>
@@ -97,7 +97,7 @@
 							<div
 								class="ml-auto rounded-lg bg-black px-2 py-1.5 text-xs font-semibold leading-none text-white"
 							>
-								Active
+								Aktiv
 							</div>
 						{/if}
 					</a>

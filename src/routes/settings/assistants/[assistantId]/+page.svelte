@@ -65,12 +65,12 @@
 						? 'bg-gray-100 text-gray-800'
 						: 'bg-black !text-white'} my-2 flex w-fit items-center rounded-full px-3 py-1 text-base"
 					disabled={isActive}
-					name="Activate model"
+					name="Aktivér model"
 					on:click|stopPropagation={() => {
 						$settings.activeModel = $page.params.assistantId;
 					}}
 				>
-					{isActive ? "Active" : "Activate"}
+					{isActive ? "Aktiv" : "Aktivér"}
 				</button>
 				{#if assistant?.createdByMe}
 					<a href="{base}/settings/assistants/{assistant?._id}/edit" class="underline"

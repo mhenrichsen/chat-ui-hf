@@ -89,12 +89,12 @@
 			? 'bg-gray-100'
 			: 'bg-black text-white'} my-8 flex items-center rounded-full px-3 py-1"
 		disabled={isActive}
-		name="Activate model"
+		name="Aktivér model"
 		on:click|stopPropagation={() => {
 			$settings.activeModel = $page.params.model;
 		}}
 	>
-		{isActive ? "Active model" : "Activate"}
+		{isActive ? "Aktiv model" : "Aktivér"}
 	</button>
 
 	<div class="flex w-full flex-col gap-2">

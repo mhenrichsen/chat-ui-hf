@@ -48,7 +48,7 @@
 			class="flex items-center truncate underline underline-offset-2"
 		>
 			<CarbonArrowUpRight class="mr-1.5 shrink-0 text-xs " />
-			Model page
+			Model side
 		</a>
 
 		{#if model.datasetName || model.datasetUrl}

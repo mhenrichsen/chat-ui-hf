@@ -35,10 +35,10 @@
 	};
 
 	const titles: { [key: string]: string } = {
-		today: "Today",
-		week: "This week",
-		month: "This month",
-		older: "Older",
+		today: "I dag",
+		week: "Denne uge",
+		month: "Denne måned",
+		older: "Ældre",
 	} as const;
 </script>
 

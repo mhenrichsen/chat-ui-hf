@@ -60,7 +60,7 @@
 		<div class="overflow-hidden rounded-xl border dark:border-gray-800">
 			<div class="flex p-3">
 				<div>
-					<div class="text-sm text-gray-600 dark:text-gray-400">Current Model</div>
+					<div class="text-sm text-gray-600 dark:text-gray-400">Nuværende model</div>
 					<div class="font-semibold">{currentModel.displayName}</div>
 				</div>
 				<a

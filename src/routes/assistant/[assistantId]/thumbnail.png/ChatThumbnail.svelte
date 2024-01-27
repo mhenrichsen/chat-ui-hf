@@ -28,7 +28,7 @@
 				{#if description.length > 160}...{/if}
 			</p>
 			<div class="rounded-full bg-[#FFA800] px-8 py-3 text-3xl font-semibold text-black">
-				Start chatting
+				Chat løs
 			</div>
 		</div>
 	</div>

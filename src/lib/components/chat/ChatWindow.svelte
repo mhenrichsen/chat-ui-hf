@@ -205,10 +205,10 @@
 				{:else}
 					<div class="flex w-full flex-1 border-none bg-transparent">
 						{#if lastIsError}
-							<ChatInput value="Sorry, something went wrong. Please try again." disabled={true} />
+							<ChatInput value="Noget gik galt. Prøv igen." disabled={true} />
 						{:else}
 							<ChatInput
-								placeholder="Ask anything"
+								placeholder="Spørg om alt"
 								bind:value={message}
 								on:submit={handleSubmit}
 								on:keypress={(ev) => {
@@ -258,8 +258,7 @@
 						{@const model = models.find((m) => m.id === assistant?.modelId)}
 						<a href="{base}/settings/assistants/{assistant._id}" class="hover:underline"
 							>{model?.displayName}</a
-						>{/if} <span class="max-sm:hidden">·</span><br class="sm:hidden" /> Generated content may
-					be inaccurate or false.
+						>{/if} <span class="max-sm:hidden">·</span><br class="sm:hidden" /> DanskGPT producerer ikke nødvendigvis sandfærdig information.
 				</p>
 				{#if messages.length}
 					<button
@@ -271,10 +270,10 @@
 					>
 						{#if isSharedRecently}
 							<CarbonCheckmark class="text-[.6rem] sm:mr-1.5 sm:text-green-600" />
-							<div class="text-green-600 max-sm:hidden">Link copied to clipboard</div>
+							<div class="text-green-600 max-sm:hidden">Link kopieret</div>
 						{:else}
 							<CarbonExport class="text-[.6rem] sm:mr-1.5 sm:text-primary-500" />
-							<div class="max-sm:hidden">Share this conversation</div>
+							<div class="max-sm:hidden">Del denne samtale.</div>
 						{/if}
 					</button>
 				{/if}

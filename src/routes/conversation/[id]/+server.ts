@@ -225,7 +225,7 @@ export async function POST({ request, locals, params, getClientAddress }) {
 			update({ type: "status", status: "started" });
 
 			const summarizeIfNeeded = (async () => {
-				if (conv.title === "New Chat" && messages.length === 1) {
+				if (conv.title === "Ny chat" && messages.length === 1) {
 					try {
 						conv.title = (await summarize(messages[0].content)) ?? conv.title;
 						update({ type: "status", status: "title", message: conv.title });

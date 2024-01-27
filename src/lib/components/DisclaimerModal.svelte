@@ -25,8 +25,7 @@
 		</p>
 
 		<p class="text-sm text-gray-500">
-			Disclaimer: AI is an area of active research with known problems such as biased generation and
-			misinformation. Do not use this application for high-stakes decisions or advice.
+			OBS: DanskGPT producerer ikke nødvendigvis sandfærdig information.
 		</p>
 
 		<div class="flex w-full flex-col items-center gap-2">
@@ -47,7 +46,7 @@
 					{#if $page.data.loginEnabled}
 						Try as guest
 					{:else}
-						Start chatting
+						Chat løs
 					{/if}
 				</button>
 			{/if}

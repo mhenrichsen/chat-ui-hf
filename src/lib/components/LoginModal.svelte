@@ -54,7 +54,7 @@
 						$settings.ethicsModalAccepted = true;
 					}}
 				>
-					Start chatting
+					Chat løs
 				</button>
 			{/if}
 		</form>

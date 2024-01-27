@@ -68,7 +68,7 @@ export const POST: RequestHandler = async ({ locals, request }) => {
 
 	const res = await collections.conversations.insertOne({
 		_id: new ObjectId(),
-		title: title || "New Chat",
+		title: title || "Ny chat",
 		messages,
 		model: values.model,
 		preprompt: preprompt === model?.preprompt ? model?.preprompt : preprompt,

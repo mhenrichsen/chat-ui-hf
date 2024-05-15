@@ -258,7 +258,7 @@
 						{@const model = models.find((m) => m.id === assistant?.modelId)}
 						<a href="{base}/settings/assistants/{assistant._id}" class="hover:underline"
 							>{model?.displayName}</a
-						>{/if} <span class="max-sm:hidden">·</span><br class="sm:hidden" /> DanskGPT producerer ikke nødvendigvis sandfærdig information. - Inferns sponseret af <a href="https://capturi.com">Capturi.</a>
+						>{/if} <span class="max-sm:hidden">·</span><br class="sm:hidden" /> DanskGPT producerer ikke nødvendigvis sandfærdig information. - Inferns sponseret af <a href="https://syv.ai">Syv.ai.</a>
 				</p>
 				{#if messages.length}
 					<button
